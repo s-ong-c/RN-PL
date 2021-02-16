@@ -9,6 +9,7 @@ import SplashScreen from 'react-native-splash-screen';
 import {StatusBar} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import MainStack from '../navigation/MainStackNavigator';
+import Loading from '../screen/Loading';
 
 export type StackParamList = {
   Loading: undefined;
@@ -22,6 +23,11 @@ export type RootStackNavigationProps<
 const Stack = createStackNavigator<StackParamList>();
 
 function RootStackNavigator(): React.ReactElement {
+  const [loading, setLoading] = useState<boolean>(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
   return (
     <NavigationContainer>
       <StatusBar
@@ -34,7 +40,11 @@ function RootStackNavigator(): React.ReactElement {
           headerShown: false,
           animationEnabled: false,
         }}>
-        <Stack.Screen name="MainStack" component={MainStack} />
+        {loading ? (
+          <Stack.Screen name="Loading" component={Loading} />
+        ) : (
+          <Stack.Screen name="MainStack" component={MainStack} />
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );

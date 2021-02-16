@@ -16,7 +16,9 @@ import svgSearch from '../../assets/icons/svgSearch.svg';
 import svgToBottom from '../../assets/icons/svgToBottom.svg';
 import svgFacebook from '../../assets/icons/svgFacebook.svg';
 import svgApple from '../../assets/icons/svgApple.svg';
+import backImage from '../../assets/back.png';
 
+export const ImageBack = backImage;
 export const SvgBack = svgBack;
 export const SvgCheck = svgCheck;
 export const SvgCheck1 = svgCheck1;

@@ -5,15 +5,15 @@ import {
 } from '@react-navigation/stack';
 
 import {NavigationContainer} from '@react-navigation/native';
-import SplashScreen from 'react-native-splash-screen';
 import {StatusBar} from 'react-native';
-import auth from '@react-native-firebase/auth';
 import MainStack from '../navigation/MainStackNavigator';
 import Loading from '../screen/Loading';
 
 export type StackParamList = {
   Loading: undefined;
   MainStack: undefined;
+  Snapchat: undefined;
+  Story: undefined;
 };
 
 export type RootStackNavigationProps<
@@ -43,7 +43,10 @@ function RootStackNavigator(): React.ReactElement {
         {loading ? (
           <Stack.Screen name="Loading" component={Loading} />
         ) : (
-          <Stack.Screen name="MainStack" component={MainStack} />
+          <>
+            <Stack.Screen name="MainStack" component={MainStack} />
+            <Stack.Screen name="Snapchat" component={MainStack} />
+          </>
         )}
       </Stack.Navigator>
     </NavigationContainer>

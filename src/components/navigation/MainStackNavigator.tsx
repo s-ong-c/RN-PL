@@ -10,10 +10,16 @@ import {
 import Main from '../screen/Main';
 import {Platform} from 'react-native';
 import React from 'react';
+import Snapchat from '../screen/Snapchat';
+import StoryComp from '../screen/Story';
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
+import {SnapchatRoutes, Story} from '../../types/Model';
 
 export type StackParamList = {
   Main: undefined;
   Auth: undefined;
+  Snapchat: undefined;
+  Story: {story: Story};
 };
 
 export type StackNavigationProps<
@@ -45,7 +51,8 @@ function MainStackNavigator(): React.ReactElement {
         cardShadowEnabled: false,
         cardStyle: {backgroundColor: 'transparent'},
       }}>
-      <Stack.Screen name="Main" component={Main} />
+      <Stack.Screen name="Main" component={Snapchat} />
+      {/* <Stack.Screen name="Story" component={StoryComp} /> */}
     </Stack.Navigator>
   );
 }

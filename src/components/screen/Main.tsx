@@ -6,8 +6,8 @@ import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {ImageBack, SvgLogo, SvgMenu} from '../../utils/Icons';
-import Card from './Card';
 import {ScrollView} from 'react-native-gesture-handler';
+import Card from './Card';
 
 const Container = styled.View`
   flex: 1;
